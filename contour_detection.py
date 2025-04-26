@@ -41,9 +41,10 @@ if __name__ == '__main__':
    while True:
       hasFrame, frame = camera.read()
       if hasFrame:
+         # finds mask given the lower and upper bounds (first and second tuple in 'range' respectively)
          mask = cv_utils.find_mask(frame, 
-                                   GUI.get_lower_bound(), 
-                                   GUI.get_upper_bound())
+                                   GUI.get_range()[0], 
+                                   GUI.get_range()[1]) 
          GUI.run()
          cv_utils.show_image(mask)
       else:

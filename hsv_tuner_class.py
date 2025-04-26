@@ -80,12 +80,4 @@ class HSVTuner():
     '''
     def get_range(self):
         print(f"({self.hsv_low}, {self.hsv_high})")
-    '''
-    Accesser method for lower and upper bounds
-    '''
-    def get_lower_bound(self):
-        return self.hsv_low
-    def get_upper_bound(self):
-        return self.hsv_high
-
     

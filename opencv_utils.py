@@ -13,7 +13,6 @@ def show_image(image):
 
    cv.imshow(window_name, image)
    cv.waitKey(1)
-
 """
 Given an image and HSV ranges, return a list of contours
 """
@@ -24,7 +23,6 @@ def find_contours(image, low: tuple, high: tuple, min_size=30)->list:
    filtered_contours = [c for c in contours if cv.contourArea(c) >= min_size]
    
    return filtered_contours
-
 """
 Returns mask (black and white thresholding) of an image after hsv transformation
 """
@@ -35,7 +33,6 @@ def find_mask(image, low: tuple, high: tuple, min_size=30):
    mask = cv.inRange(hsv, low, high) # thresholding image
    
    return mask
-
 """
 Draws multiple contours given list or individual contour given single contour 
 """
@@ -44,7 +41,6 @@ def draw_contours(image, contours, color: tuple): # "color" tuple is in RGB form
       cv.drawContours(image, [contours], -1, color, 3)
    elif len(contours) > 0: # if the "contours" parameter is a list w/ at least 1 element
       cv.drawContours(image, contours, -1, color, 3)
-
 """
 Gets largest contour in size given list of contours
 """
@@ -58,7 +54,6 @@ def get_largest_contour(contours):
             max_contour = c
       return max_contour
    return None
-
 """
 Finds the center of a contour given a specific contour
 Format of the center is (x, y), where x is the horizontal axis and y is the vertical axis
@@ -71,7 +66,6 @@ def get_contour_center(contour)->tuple:
       cy = int(M['m01']/M['m00'])
       return (cx, cy)
    return None
-
 """
 Draws a circle at a point
 """
