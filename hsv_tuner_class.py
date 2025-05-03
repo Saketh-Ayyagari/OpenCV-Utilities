@@ -79,5 +79,5 @@ class HSVTuner():
     Returns pair of tuples specifiying lower and upper HSV value range
     '''
     def get_range(self):
-        print(f"({self.hsv_low}, {self.hsv_high})")
+        return (self.hsv_low, self.hsv_high)
     
