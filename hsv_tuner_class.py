@@ -33,7 +33,7 @@ class HSVTuner():
         self.s_high_scale = Scale(self.tk, from_=0, to=255, orient=HORIZONTAL, length=SLIDER_LENGTH)   
         self.v_high_scale = Scale(self.tk, from_=0, to=255, orient=HORIZONTAL, length=SLIDER_LENGTH)   
         # initializing button to return HSV range
-        self.return_hsv_values = Button(self.tk, text="Get HSV Range", command=self.get_range)
+        self.return_hsv_values = Button(self.tk, text="Print HSV Range", command=self.print_range)
         
     '''
     Packs all variables in order to appear in GUI
@@ -80,4 +80,7 @@ class HSVTuner():
     '''
     def get_range(self):
         return (self.hsv_low, self.hsv_high)
+
+    def print_range(self):
+        print(self.get_range())
     
