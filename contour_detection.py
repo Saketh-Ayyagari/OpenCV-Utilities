@@ -9,6 +9,8 @@ from hsv_tuner_class import HSVTuner
 YELLOW = ((17, 25, 25), (35, 255, 255)) # The HSV range for the color yellow
 RED = ((0, 60, 23), (10, 255, 255))  # The HSV range for the color red
 GUI = HSVTuner()
+CAMERA_INDEX = 2 # configures which camera is used for contour detection
+# NOTE: 0 is the default computer webcam, but you may need to use other indecies
 ############
 # Methods
 ############
@@ -36,7 +38,7 @@ if __name__ == '__main__':
 
    print("Starting contour detection...")
    # initializing camera, camera window, and GUI window
-   camera = cv.VideoCapture(0)
+   camera = cv.VideoCapture(CAMERA_INDEX)
    
    while True:
       hasFrame, frame = camera.read()
