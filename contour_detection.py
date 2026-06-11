@@ -6,6 +6,9 @@ from hsv_tuner_class import HSVTuner
 ############
 # Constants
 ############
+CAMERA_WIDTH = 640
+CAMERA_HEIGHT = 480
+
 YELLOW = ((17, 25, 25), (35, 255, 255)) # The HSV range for the color yellow
 RED = ((0, 60, 23), (10, 255, 255))  # The HSV range for the color red
 GUI = HSVTuner()
@@ -39,6 +42,10 @@ if __name__ == '__main__':
    print("Starting contour detection...")
    # initializing camera, camera window, and GUI window
    camera = cv.VideoCapture(CAMERA_INDEX)
+
+   # sets camera resolution to CAMERA_WIDTH x CAMERA_HEIGHT (change in CONSTANTS). 
+   camera.set(cv.CAP_PROP_FRAME_WIDTH, CAMERA_WIDTH)
+   camera.set(cv.CAP_PROP_FRAME_HEIGHT, CAMERA_HEIGHT)
    
    try:
       while True:
